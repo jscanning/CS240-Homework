@@ -38,7 +38,7 @@ public final class ArrayStack<T> implements StackInterface<T>
 			topIndex++;
 		}catch(ArrayIndexOutOfBoundsException e)
 		{
-			System.out.println("Stack is full.");
+			System.out.println("Attempted to add an entry to a full stack.");
 		}
 	}
 
@@ -69,7 +69,6 @@ public final class ArrayStack<T> implements StackInterface<T>
 	private void checkInitialization() {
 		if(!initialized)
 			throw new SecurityException("ArrayStack object is not initialized properly.");
-		
 	}
 
 	@Override
