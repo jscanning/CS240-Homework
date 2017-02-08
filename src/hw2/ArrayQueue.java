@@ -75,15 +75,16 @@ public class ArrayQueue<T> implements QueueInterface<T>
 	} // end getFront
 
 	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+	public boolean isEmpty() 
+	{
+		return frontIndex == ((backIndex + 1) % queue.length);
+	} // end isEmpty
 
 	@Override
-	public void clear() {
-		// TODO Auto-generated method stub
-		
-	}
+	public void clear() 
+	{
+		while(!isEmpty())
+			dequeue();
+	} // end clear
 
 }
