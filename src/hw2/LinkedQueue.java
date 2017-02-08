@@ -12,44 +12,6 @@ public class LinkedQueue<T> implements QueueInterface<T>
 		lastNode = null;
 	}
 	
-	private class Node
-	{
-		private T data;
-		private Node next;
-		
-		private Node(T dataPortion)
-		{
-			this(dataPortion, null);
-		}
-		
-		public Node(T dataPortion, Node nextNode) 
-		{
-			data = dataPortion;
-			next = nextNode;
-		}
-		
-		public T getData() 
-		{
-			return data;
-		}
-		
-		private void setData(T newData) 
-		{
-			data = newData;
-		}
-
-		public Node getNextNode() 
-		{
-			return next;
-		}
-		
-		public void setNextNode(Node nextNode) 
-		{
-			next = nextNode;
-		}
-		
-	} // End inner class Node.
-	
 	@Override
 	public void enqueue(T newEntry) 
 	{
@@ -94,5 +56,43 @@ public class LinkedQueue<T> implements QueueInterface<T>
 		firstNode = null;
 		lastNode = null;
 	} // end clear
+	
+	private class Node
+	{
+		private T data;
+		private Node next;
+		
+		private Node(T dataPortion)
+		{
+			this(dataPortion, null);
+		}
+		
+		public Node(T dataPortion, Node nextNode) 
+		{
+			data = dataPortion;
+			next = nextNode;
+		}
+		
+		public T getData() 
+		{
+			return data;
+		}
+		
+		private void setData(T newData) 
+		{
+			data = newData;
+		}
 
-}
+		public Node getNextNode() 
+		{
+			return next;
+		}
+		
+		public void setNextNode(Node nextNode) 
+		{
+			next = nextNode;
+		}
+		
+	} // End inner class Node.
+	
+} // end class LinkedQueue

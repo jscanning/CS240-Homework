@@ -80,7 +80,6 @@ public final class ArrayStack<T> implements StackInterface<T>
 	public void clear() {
 		while(!isEmpty())
 			pop();
-		
 	}
 	
-}
+} // end class ArrayStack

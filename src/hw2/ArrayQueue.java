@@ -1,5 +1,5 @@
 package hw2;
-
+//////////////////////////////////////////////////////////
 public class ArrayQueue<T> implements QueueInterface<T> 
 {
 	private T[] queue;
@@ -87,4 +87,5 @@ public class ArrayQueue<T> implements QueueInterface<T>
 			dequeue();
 	} // end clear
 
-}
+} // end class ArrayQueue
+//////////////////////////////////////////////////////////

@@ -67,4 +67,4 @@ public class VectorStack<T> implements StackInterface<T> {
 		stack.clear();
 	}
 
-}
+} // end class VectorStack
