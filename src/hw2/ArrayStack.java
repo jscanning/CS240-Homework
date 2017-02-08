@@ -8,6 +8,7 @@ import java.util.EmptyStackException;
  * An implementation of the stack interface as a
  * fixed size array of size 10.
  */
+
 public final class ArrayStack<T> implements StackInterface<T>
 {
 	private T[] stack;
