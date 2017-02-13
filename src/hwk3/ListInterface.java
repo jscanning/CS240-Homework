@@ -7,8 +7,9 @@ public interface ListInterface<T>
 	 * Items already in the list are unaffected. 
 	 * The size of the list increases by 1.
 	 * @param newItem The object to be added as a new item.
+	 * @return True if the operation was successful, false otherwise.
 	 */
-	public void add(T newItem);
+	public boolean add(T newItem);
 	
 	/**
 	 * Adds a new item at a specified place in this list.

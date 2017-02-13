@@ -1,71 +1,89 @@
 package hwk3;
 
+import java.util.Vector;
+
 public class VectorList<T> implements ListInterface<T> {
 
-	@Override
-	public void add(T newItem) {
-		// TODO Auto-generated method stub
+	private Vector<T> list;
+	private boolean initialized = false;
+	private static final int DEFAULT_CAPACITY = 20;
+	
+	public VectorList()
+	{
+		this(DEFAULT_CAPACITY);
+	}
+	
+	public VectorList(int capacity)
+	{
+		list = new Vector<T>(capacity);
+		initialized = true;
+	}
+	
+	private void checkInitialization() {
+		if(!initialized)
+			throw new SecurityException("ArrayStack object is not initialized properly.");
+	}
 
+	
+	@Override
+	public boolean add(T newItem) {
+		checkInitialization();
+		return list.add(newItem);
 	}
 
 	@Override
 	public void add(T newItem, int location) {
-		// TODO Auto-generated method stub
-
+		checkInitialization();
+		list.add(location, newItem);
 	}
 
 	@Override
 	public boolean remove(T item) {
-		// TODO Auto-generated method stub
-		return false;
+		checkInitialization();
+		return list.remove(item);
 	}
 
 	@Override
 	public T remove(int location) {
-		// TODO Auto-generated method stub
-		return null;
+		return list.remove(location);
 	}
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-
+		list.clear();
 	}
 
 	@Override
 	public T replace(int location, T newItem) {
-		// TODO Auto-generated method stub
-		return null;
+		T replaced = list.remove(location);
+		list.add(location, newItem);
+		return replaced;
 	}
 
 	@Override
 	public T look(int location) {
-		// TODO Auto-generated method stub
-		return null;
+		return list.get(location);
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public T[] lookAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return (T[]) list.toArray();
 	}
 
 	@Override
 	public boolean contains(T anItem) {
-		// TODO Auto-generated method stub
-		return false;
+		return list.contains(anItem);
 	}
 
 	@Override
 	public int getCount() {
-		// TODO Auto-generated method stub
-		return 0;
+		return list.capacity();
 	}
 
 	@Override
 	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+		return list.isEmpty();
 	}
 
 }
